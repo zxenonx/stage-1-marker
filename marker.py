@@ -22,6 +22,14 @@ def read_csv(file):
         return urls
 
 def is_valid(response: dict[str, Any]) -> bool:
+    if "slackUsername" not in response:
+        return False
+    if "backend" not in response:
+        return False
+    if "age" not in response:
+        return False
+    if "bio" not in response:
+        return False
     if not isinstance(response["slackUsername"], str) or not isinstance(response["backend"], bool) or not isinstance(response["age"], int) or not isinstance(response["bio"], str):
         return False
     return True
