@@ -42,7 +42,7 @@ def marker(urls: list[dict[str, Any]]) -> None:
     for url in urls:
         try:
             # sending get request and saving the response as response object
-            response = requests.get(url=url["endpoint"], timeout=10)
+            response = requests.get(url=url["endpoint"], timeout=120)
             print(response.status_code)
 
             if response.status_code != 200:
