@@ -8,7 +8,7 @@ import requests
 from requests.exceptions import ConnectTimeout, Timeout
 
 def read_csv(file):
-    with open(file, 'r') as f:
+    with open(file, 'r', encoding="utf-8") as f:
         reader = csv.reader(f)
         next(f, None)
         urls = []
